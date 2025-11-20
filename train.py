@@ -159,4 +159,11 @@ def train():
 # MAIN
 # -----------------------
 if __name__ == "__main__":
-    train()
+    svm, pca, X_train_pca, y_train, X_test_pca, y_test = train()
+
+    preds = svm.predict(X_test_pca[:5])
+    probs = svm.predict_proba(X_test_pca[:5])
+
+    print("\n=== Quick Test Prediction ===")
+    print("Predictions:", preds)
+    print("Probabilities:", probs)
