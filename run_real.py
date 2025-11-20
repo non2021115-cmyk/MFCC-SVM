@@ -13,4 +13,5 @@ predictions = svm.predict(real_pca)
 # Print results
 for i, pred in enumerate(predictions):
     label = "bad" if pred == 1 else "good"
-    print(f"sample_{i}: {label}")
+    print(f"sample_{i}: {label}, prob={probs[i]}")
+
